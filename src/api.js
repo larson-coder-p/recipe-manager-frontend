@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://recipe-manager-backend-gpy3.onrender.com";
 
 export async function fetchRecipes() {
   const response = await fetch(`${API_URL}/recipes`);
