@@ -1,0 +1,17 @@
+.landing-container {
+    background: url("https://th.bing.com/th/id/R.bebd75392e415f3fce2420686bfb74b5?rik=vi0eP%2bLauR0gqw&pid=ImgRaw&r=0") no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .landing-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-weight: bold;
+  }
