@@ -1,4 +1,6 @@
-const API_URL = "https://recipe-manager-backend-gpy3.onrender.com"; // Replace with your backend URL
+const API_URL = "https://recipe-manager-backend-gpy3.onrender.com"; 
+
+
 
 export async function fetchRecipes() {
   const response = await fetch(`${API_URL}/recipes`);
@@ -16,9 +18,11 @@ export async function createRecipe(recipeData) {
     },
     body: JSON.stringify(recipeData),
   });
-
   if (!response.ok) {
     throw new Error("Failed to add recipe");
   }
   return response.json();
 }
+
+// Export API_URL to fix import issues
+export { API_URL };
