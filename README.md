@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+Recipe Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Recipe Manager is a full-stack web application that allows users to create, view, and manage their favorite recipes. It provides a user-friendly interface for adding recipes, exploring detailed instructions, and maintaining an organized recipe collection.
 
-## Available Scripts
+ Features
+Frontend:
+1.Landing Page: A welcoming page with a call to action.
+2.Home Page: Displays all recipes in a card-based layout.
+3.Recipe Details: A detailed page for each recipe with ingredients and instructions.
+4.Add Recipe Form: Allows users to add new recipes to the collection.
+5.About & Contact Pages: Information about the platform and a contact form with embedded Google Maps.
 
-In the project directory, you can run:
+Backend:
+1.Flask Framework: Handles API requests and database operations.
+2.RESTful API: Endpoints for recipe management (GET, POST).
+3.PostgreSQL Database: Stores recipe data securely and efficiently.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+📂 Project Structure
+recipe-manager/
+├── backend/                  # Flask Backend
+│   ├── app.py               # Main Flask application
+│   ├── requirements.txt     # Backend dependencies
+│   ├── models.py            # Database models
+│   └── instance/            # Database files (local SQLite)
+│
+├── frontend/                 # React Frontend
+│   ├── public/              # Static assets
+│   │   ├── assets/          # Images and other resources
+│   │   ├── index.html       # Main HTML template
+│   ├── src/                 # Source code
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/           # Individual pages (Home, About, etc.)
+│   │   ├── styles/          # CSS files
+│   │   ├── api.js           # API calls to backend
+│   │   ├── App.js           # Main application
+│   │   ├── index.js         # Entry point
+│   └── package.json         # Frontend dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Technologies Used
+Frontend:
+1.React.js: Frontend library for building the user interface.
+2.Bootstrap: Styling framework for responsive design.
+3.FontAwesome: Icons for visual appeal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend:
+1.Flask: Lightweight Python framework for RESTful API development.
+2.SQLAlchemy: ORM for managing the PostgreSQL database.
+3.CORS: Handles cross-origin requests between frontend and backend.
+4.PostgreSQL: Relational database for storing recipe data.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ Deployment
+Backend:
+Platform: Render
+Database: Render PostgreSQL
+API Base URL: https://recipe-manager-backend-gpy3.onrender.com
+Frontend:
+Platform: Vercel
+Base URL: Deployed frontend app URL (e.g., https://recipe-manager-frontend.vercel.app)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+ Setup Instructions
+Prerequisites:
+Node.js (Frontend)
+Python 3.9+ (Backend)
+PostgreSQL (Database)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ Contact
+For inquiries or issues, please reach out to:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email: contact@recipemanager.com
+Phone: +254 769 216 414
