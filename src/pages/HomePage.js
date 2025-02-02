@@ -2,21 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../assets/hero.jpg";
 import "../styles/HomePage.css";
-
+import { fetchRecipes } from "../api";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("/api/recipes") // Adjust API URL if needed
-      .then((response) => response.json())
+    fetchRecipes()
       .then((data) => setRecipes(data))
       .catch((error) => console.error("Error fetching recipes:", error));
   }, []);
 
   return (
     <>
-      {/* Hero Section */}
       <div
         className="hero"
         style={{
@@ -30,7 +28,6 @@ const HomePage = () => {
         </Link>
       </div>
 
-      {/* Recipes Section */}
       <div className="container mt-4">
         <div className="row">
           {recipes.length > 0 ? (
@@ -39,7 +36,10 @@ const HomePage = () => {
                 <div className="card">
                   <div className="card-body">
                     <h5 className="card-title">{recipe.title}</h5>
-                    <p className="card-text">{recipe.ingredients}</p>
+                    <p className="card-text">Ingredients: {recipe.ingredients}</p>
+                    <Link to={`/recipes/${recipe.id}`} className="btn btn-primary">
+                      View Recipe
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,16 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchRecipeById } from "../api";
+import { API_URL } from "../api";
 
 const RecipeDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Extract ID from the URL
   const [recipe, setRecipe] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetchRecipeById(id)
-      .then(setRecipe)
-      .catch(console.error);
+    async function fetchRecipe() {
+      try {
+        const response = await fetch(`${API_URL}/recipes/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch recipe details");
+        }
+        const data = await response.json();
+        setRecipe(data);
+      } catch (err) {
+        console.error("Error fetching recipe:", err);
+        setError("Failed to load recipe details.");
+      }
+    }
+
+    fetchRecipe();
   }, [id]);
+
+  if (error) {
+    return (
+      <div className="container mt-5">
+        <div className="alert alert-danger">{error}</div>
+      </div>
+    );
+  }
 
   if (!recipe) {
     return <p>Loading...</p>;
@@ -18,18 +39,7 @@ const RecipeDetail = () => {
 
   return (
     <div className="container mt-5">
-      {/* Recipe Image */}
-      <img
-        src={recipe.image || "https://via.placeholder.com/600"}
-        alt={recipe.title}
-        className="img-fluid mb-4"
-        style={{ borderRadius: "8px" }}
-      />
-
-      {/* Recipe Title */}
       <h2 className="text-center">{recipe.title}</h2>
-
-      {/* Ingredients */}
       <div className="mt-4 p-3 bg-light rounded">
         <h4>Ingredients</h4>
         <ul>
@@ -38,8 +48,6 @@ const RecipeDetail = () => {
           ))}
         </ul>
       </div>
-
-      {/* Instructions */}
       <div className="mt-4 p-3 bg-white shadow-sm rounded">
         <h4>Instructions</h4>
         <p>{recipe.instructions}</p>

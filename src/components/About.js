@@ -1,11 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/About.css"; 
+
 
 const About = () => {
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">About Recipe Manager</h1>
-      <div className="row">
+
+      <div className="row align-items-center">
+        {/* About Content */}
         <div className="col-md-6">
           <h3>What is Recipe Manager?</h3>
           <p>
@@ -15,14 +19,18 @@ const About = () => {
             explore new ones.
           </p>
         </div>
-        <div className="col-md-6">
+
+        {/* About Image */}
+        <div className="col-md-6 text-center">
           <img
-            src="/assets/about.jpg"
+            src="/images/About.jpg" 
             alt="About Recipe Manager"
             className="img-fluid rounded shadow"
           />
         </div>
       </div>
+
+      {/* Features Section */}
       <div className="row mt-5">
         <div className="col-md-4 text-center">
           <i className="fas fa-book fa-3x text-primary mb-3"></i>
