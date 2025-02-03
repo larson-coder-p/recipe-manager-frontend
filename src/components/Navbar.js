@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/recipes">Home</Link> {/* Fix: Home goes to Recipe List */}
+              <Link className="nav-link" to="/recipes">Home</Link> 
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/add-recipe">Add Recipe</Link>

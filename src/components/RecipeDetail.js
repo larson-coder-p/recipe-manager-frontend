@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { API_URL } from "../api";
 
 const RecipeDetail = () => {
-  const { id } = useParams(); // Extract ID from the URL
+  const { id } = useParams(); 
   const [recipe, setRecipe] = useState(null);
   const [error, setError] = useState("");
 

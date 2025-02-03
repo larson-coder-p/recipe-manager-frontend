@@ -123,7 +123,7 @@ const Contacts = () => {
             </button>
           </div>
 
-          {/* Google Map */}
+          {/* Map */}
           <div className="mt-4">
             <iframe
               title="Google Map"
